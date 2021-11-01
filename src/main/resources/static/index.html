@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Skates Shop</title>
+    <!--llamado de la libreria Ajax y el jquery  /  bootstrap-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!--llamado de los Script para las tablas "skate", "client" y "message"-->
+    <script type="text/javascript" src="js/scriptClient.js"></script>
+    <script type="text/javascript" src="js/scriptSkate.js"></script>
+    <script type="text/javascript" src="js/scriptMessage.js"></script>
+    <script type="text/javascript" src="js/scriptCategory.js"></script>
+    <script type="text/javascript" src="js/scriptReservation.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+    <!--Estilos CSS-->
+    <link rel="stylesheet" href="css/estilos.css">
+
+
+    <!--Codigo para Autenticacion-->
+    <base href="/" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <!--<script type="text/javascript" src="script.js"></script>-->
+
+
+
+    <!--Copiamos Link de Jquery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+
+<body>
+    <!--Llamado para Autenticacion-->
+
+    <h1>#MisionTIC 2022</h1>
+    <div class="container unauthenticated">
+        Para Iniciar Sesion con Github:
+        <a href="/oauth2/authorization/github">click here</a>
+    </div>
+
+    <div class="container authenticated" style="display:none">
+        Autenticado como:
+        <span id="user"></span>
+
+
+        <section class="form-Home" id="Home">
+            <h2>Bienvenido</h2>
+            <img src="img/perro.gif" alt="">
+        </section>
+
+
+        <header class="header">
+            <div class="container">
+                <div class="btn-menu">
+                    <label for="btn-menu">☰</label>
+                </div>
+                <div class="logo">
+                    <h1>Skate Shop</h1>
+                </div>
+                <nav class="menu">
+
+                    <a href="Skate.html"><span></span><span class="tab-text">Skate</span></a>
+                    <a href="Category.html"><span></span><span class="tab-text">Category</span></a>
+                    <a href="Client.html"><span></span><span class="tab-text">Client</span></a>
+                    <a href="Message.html"><span></span><span class="tab-text">Message</span></a>
+                    <a href="Reservation.html"><span></span><span class="tab-text">Reservation</span></a>
+                    <a href="Reports.html"><span></span><span class="tab-text">Reports</span></a>
+                </nav>
+            </div>
+
+        </header>
+
+        <div class="capa"></div>
+        <!--	--------------->
+        <input type="checkbox" id="btn-menu">
+        <div class="container-menu">
+            <div class="cont-menu">
+                <nav>
+
+                    <a href="Skate.html"><span></span><span class="tab-text">Skate</span></a>
+                    <a href="Category.html"><span></span><span class="tab-text">Category</span></a>
+                    <a href="Client.html"><span></span><span class="tab-text">Client</span></a>
+                    <a href="Message.html"><span></span><span class="tab-text">Message</span></a>
+                    <a href="Reservation.html"><span></span><span class="tab-text">Reservation</span></a>
+                    <a href="Reports.html"><span></span><span class="tab-text">Reports</span></a>
+                </nav>
+                <label for="btn-menu">✖️</label>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+<script type="text/javascript">
+    $.get("/user", function(data) {
+        $("#user").html(data.name);
+        $(".unauthenticated").hide()
+        $(".authenticated").show()
+    });
+</script>
+
+
+
+</html>
+
+</html>

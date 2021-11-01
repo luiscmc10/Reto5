@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tienda Skates</title>
+    <!--llamado de la libreria Ajax y el jquery  /  bootstrap-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!--llamado de los Script para las tablas "skate", "client" y "message"-->
+    <script type="text/javascript" src="js/scriptClient.js"></script>
+    <script type="text/javascript" src="js/scriptSkate.js"></script>
+    <script type="text/javascript" src="js/scriptMessage.js"></script>
+    <script type="text/javascript" src="js/scriptCategory.js"></script>
+    <script type="text/javascript" src="js/scriptReservation.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+    <!--Estilos CSS-->
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <!--Codigo para Autenticacion-->
+    <base href="/" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <!--<script type="text/javascript" src="script.js"></script>-->
+
+
+
+    <!--Copiamos Link de Jquery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+            <div class="logo">
+                <h1>Reservation</h1>
+            </div>
+            <nav class="menu">
+                <a href="#Home"><span></span><span class="tab-text">Home</span></a>
+                <a href="Skate.html"><span></span><span class="tab-text">Skate</span></a>
+                <a href="Category.html"><span></span><span class="tab-text">Category</span></a>
+                <a href="Client.html"><span></span><span class="tab-text">Client</span></a>
+                <a href="Message.html"><span></span><span class="tab-text">Message</span></a>
+                <a href="Reports.html"><span></span><span class="tab-text">Reports</span></a>
+
+            </nav>
+        </div>
+
+    </header>
+
+    <div class="capa"></div>
+    <!--	--------------->
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="cont-menu">
+            <nav>
+                <a href="#Home"><span></span><span class="tab-text">Home</span></a>
+                <a href="Skate.html"><span></span><span class="tab-text">Skate</span></a>
+                <a href="Category.html"><span></span><span class="tab-text">Category</span></a>
+                <a href="Client.html"><span></span><span class="tab-text">Client</span></a>
+                <a href="Message.html"><span></span><span class="tab-text">Message</span></a>
+                <a href="Reports.html"><span></span><span class="tab-text">Reports</span></a>
+
+            </nav>
+            <label for="btn-menu">✖️</label>
+
+        </div>
+
+
+    </div>
+    <section class="form-Reservation" id="Reservation">
+        <!--Seccion Reservaciones-->
+        <h2>Reservaciones</h2>
+
+        <!--Creacion del Formulario Reservation-->
+
+        <label>STARTDATE:</label>
+        <input class="controlReservation" type="date" id="startDate" placeholder="startDate"><br>
+        <label>DEVOLUTIONDATE:</label>
+        <input class="controlReservation" type="date" id="devolutionDate" placeholder="devolutionDate"><br>
+        <label>STATUS:</label>
+        <input class="controlReservation" type="text" id="status" placeholder="status">
+        <br>
+        <button class="botonReservation" onclick="agregarReservation()">Agregar Información</button>
+        <label>Seleccionar Skate</label>
+        <label>Seleccionar Cliente</label><br>
+        <select id="select-skate"></select>
+        <select id="select-client"></select>
+        <!--Creacion de la tabla de Reservations-->
+        <div>
+            <table class="tablaReservation">
+                <h2>Reporte de Reservaciones</h2>
+                <tbody id="miListaReservation"></tbody>
+            </table>
+        </div>
+        <br>
+        <button class="botonReservation" onclick="listarReservation()">Visualizar Información</button>
+        <!--<button class="botonReservation" onclick="actualizarReservation()">Actualizar!</button>-->
+        <br>
+    </section>
+    </div>
+    </div>
+
+    <!--Estilo de la Tabla-->
+    <style>
+        table,
+        th,
+        td {
+            border: 5px solid white;
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+
+    <hr>
+
+    </div>
+</body>
+
+<script type="text/javascript">
+    $.get("/user", function(data) {
+        $("#user").html(data.name);
+        $(".unauthenticated").hide()
+        $(".authenticated").show()
+    });
+</script>
+
+
+
+</html>
+
+</html>

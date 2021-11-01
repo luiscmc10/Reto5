@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tienda Skates</title>
+    <!--llamado de la libreria Ajax y el jquery  /  bootstrap-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!--llamado de los Script para las tablas "skate", "client" y "message"-->
+    <script type="text/javascript" src="js/scriptReportes.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+    <!--Estilos CSS-->
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <!--Codigo para Autenticacion-->
+    <base href="/" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <!--<script type="text/javascript" src="script.js"></script>-->
+
+
+
+    <!--Copiamos Link de Jquery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+            <div class="logo">
+                <h1>Reports</h1>
+            </div>
+            <nav class="menu">
+                <a href="#Home"><span></span><span class="tab-text">Home</span></a>
+                <a href="Skate.html"><span></span><span class="tab-text">Skate</span></a>
+                <a href="Category.html"><span></span><span class="tab-text">Category</span></a>
+                <a href="Client.html"><span></span><span class="tab-text">Client</span></a>
+                <a href="Reservation.html"><span></span><span class="tab-text">Reservation</span></a>
+                <a href="Reports.html"><span></span><span class="tab-text">Reports</span></a>
+            </nav>
+        </div>
+
+    </header>
+
+    <div class="capa"></div>
+    <!--	--------------->
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="cont-menu">
+            <nav>
+                <a href="#Home"><span></span><span class="tab-text">Home</span></a>
+                <a href="Skate.html"><span></span><span class="tab-text">Skate</span></a>
+                <a href="Category.html"><span></span><span class="tab-text">Category</span></a>
+                <a href="Client.html"><span></span><span class="tab-text">Client</span></a>
+                <a href="Reservation.html"><span></span><span class="tab-text">Reservation</span></a>
+                <a href="Reports.html"><span></span><span class="tab-text">Reports</span></a>
+            </nav>
+            <label for="btn-menu">✖️</label>
+
+        </div>
+
+    </div>
+
+    <section class="form-Message" id="Message">
+        <!--Seccion Mensajes-->
+        <h2>Reports</h2>
+        <div>
+            <input type="date" id="RstarDate" placeholder="descripcion">
+            <input type="date" id="RdevolutionDate" placeholder="descripcion">
+        </div>
+
+        <div>
+            <table class="tablaMessage">
+                <h2>Result Status</h2>
+                <button onclick="traerReporteStatus()"> Generar Reporte Status Reservas </button><br>
+                <tbody id="resultadoStatus"></tbody>
+
+
+            </table>
+        </div>
+        <br>
+        <div>
+            <table class="tablaMessage">
+                <h2>Result Dates</h2>
+                <button onclick="traerReporteDate()"> Generar Reporte por fecha </button><br>
+                <tbody id="resultadoDate"></tbody>
+
+            </table>
+        </div>
+        <br>
+        <div>
+            <table class="tablaMessage">
+                <h2>Result Clients</h2>
+                <button onclick="traerReporteClientes()"> Generar Reporte Clientes y Cantidad de reservas por cliente </button><br>
+                <tbody id="resultadoClientes"></tbody>
+
+
+            </table>
+        </div>
+
+    </section>
+
+</body>
+<style>
+    table,
+    th,
+    td {
+        border: 5px solid white;
+        border-collapse: collapse;
+        text-align: center;
+    }
+</style>
+<script type="text/javascript">
+    $.get("/user", function(data) {
+        $("#user").html(data.name);
+        $(".unauthenticated").hide()
+        $(".authenticated").show()
+    });
+</script>
+
+
+</html>

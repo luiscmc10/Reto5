@@ -1,0 +1,522 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+body {
+    background: url(https://www.xtrafondos.com/wallpapers/montanas-con-nieve-en-el-bosque-3934.jpg);
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+.capa {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+
+/*Estilos para el encabezado*/
+
+.header {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.container .btn-menu,
+.logo {
+    float: left;
+    line-height: 100px;
+}
+
+.container .btn-menu label {
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.logo h1 {
+    color: #fff;
+    font-weight: 400;
+    font-size: 22px;
+    margin-left: 10px;
+}
+
+.container .menu {
+    float: right;
+    line-height: 100px;
+}
+
+.container .menu a {
+    display: inline-block;
+    padding: -5px;
+    line-height: normal;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    font-size: 15px;
+    margin-right: 0px;
+}
+
+.container .menu a:hover {
+    border-bottom: 2px solid #c7c7c7;
+    padding-bottom: 5px;
+}
+
+
+/*Fin de Estilos para el encabezado*/
+
+
+/*Menù lateral*/
+
+#btn-menu {
+    display: none;
+}
+
+.container-menu {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#btn-menu:checked~.container-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cont-menu {
+    width: 100%;
+    max-width: 250px;
+    background: #1c1c1c;
+    height: 100vh;
+    position: relative;
+    transition: all 500ms ease;
+    transform: translateX(-100%);
+}
+
+#btn-menu:checked~.container-menu .cont-menu {
+    transform: translateX(0%);
+}
+
+.cont-menu nav {
+    transform: translateY(15%);
+}
+
+.cont-menu nav a {
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: #c7c7c7;
+    border-left: 5px solid transparent;
+    transition: all 400ms ease;
+}
+
+.cont-menu nav a:hover {
+    border-left: 5px solid #c7c7c7;
+    background: #1f1f1f;
+}
+
+.cont-menu label {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+/*Fin de Menù lateral*/
+
+
+/*Estilos Category*/
+
+.form-Category {
+    width: 800px;
+    background: #2f7a42;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    color: white;
+    box-shadow: 5px 1px 10px #2f7a42;
+}
+
+.form-Category h2 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.controlCategory {
+    width: 100%;
+    background: #cfe0f1;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-bottom: 16px;
+    border: 1px solid #2f7a42;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    font-size: 18px;
+}
+
+.form-Category .botonCategory {
+    width: 90%;
+    border: 10px;
+    padding: 5px;
+    margin-left: 25px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border: 1px solid #2f7a42;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    font-size: 15px;
+}
+
+.tablaCategory {
+    width: 100%;
+    padding: 5px;
+    border: white;
+}
+
+#miListaCategory {
+    padding: 5px;
+}
+
+.form-Category .botonCategory2 {
+    width: 100%;
+    border: 5px;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1px solid #2f7a42;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    font-size: 15px;
+}
+
+
+/*Estilos Reservation*/
+
+.form-Reservation {
+    width: 800px;
+    background: #2f7a42;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    color: white;
+    box-shadow: 5px 1px 10px #2f7a42;
+}
+
+.form-Reservation h2 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.controlReservation {
+    width: 100%;
+    background: #cfe0f1;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-bottom: 16px;
+    border: 1px solid #2f7a42;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    font-size: 18px;
+}
+
+.form-Reservation .botonReservation {
+    width: 90%;
+    border: 10px;
+    padding: 5px;
+    margin-left: 25px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border: 1px solid #2f7a42;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    font-size: 15px;
+}
+
+.tablaReservation {
+    width: 100%;
+    padding: 2px;
+}
+
+.form-Reservation .botonReservation2 {
+    width: 100%;
+    border: 5px;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1px solid #2f7a42;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    font-size: 15px;
+}
+
+
+/*pie de pagina*/
+
+.pie {
+    margin-top: 200px;
+}
+
+
+/*Estilo General*/
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.active {
+    background: #0984cc;
+}
+
+ul.tabs li a .tab-text {
+    margin-left: 8px;
+}
+
+.tabs-container {
+    width: 100%;
+    background: white;
+}
+
+.tabs-container section {
+    padding: 20px;
+}
+
+.form-Home h2 {
+    text-align: center;
+    color: white;
+}
+
+.form-Home img {
+    margin: auto;
+    display: block;
+}
+
+
+/*Linea Divisora*/
+
+hr {
+    width: 100%;
+}
+
+
+/*Estilos Skate*/
+
+.form-Skate {
+    width: 800px;
+    background: #2f7a42;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    color: white;
+    box-shadow: 5px 1px 10px #2f7a42;
+}
+
+.form-Skate h2 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.controlSkate {
+    width: 100%;
+    background: #cfe0f1;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-bottom: 16px;
+    border: 1px solid #2f7a42;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    font-size: 18px;
+}
+
+.form-Skate .botonSkate {
+    width: 90%;
+    border: 10px;
+    padding: 5px;
+    margin-left: 25px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border: 1px solid #2f7a42;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    font-size: 15px;
+}
+
+.tablaSkate {
+    width: 100%;
+    padding: 5px;
+}
+
+#miListaSkate {
+    padding: 5px;
+}
+
+.form-Skate .botonSkate2 {
+    width: 100%;
+    border: 5px;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1px solid #2f7a42;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+
+/*Estilos Clientes*/
+
+.form-Client {
+    width: 800px;
+    background: #2f7a42;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    color: white;
+    box-shadow: 5px 1px 10px #2f7a42;
+}
+
+.form-Client h2 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.controlCliente {
+    width: 100%;
+    background: #cfe0f1;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-bottom: 16px;
+    border: 1px solid #2f7a42;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    font-size: 18px;
+}
+
+.form-Client .botonCliente {
+    width: 100%;
+    border: 5px;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1px solid #2f7a42;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    font-size: 15px;
+}
+
+.tablaCliente {
+    width: 100%;
+    padding: 2px;
+}
+
+.form-Client .botonCliente2 {
+    width: 100%;
+    border: 5px;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1px solid #2f7a42;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    font-size: 15px;
+}
+
+
+/*Estilos Message*/
+
+.form-Message {
+    width: 800px;
+    background: #2f7a42;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    color: white;
+    box-shadow: 5px 1px 10px #2f7a42;
+}
+
+.form-Message h2 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.controlMessage {
+    width: 100%;
+    background: #cfe0f1;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-bottom: 16px;
+    border: 1px solid #2f7a42;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    font-size: 18px;
+}
+
+.form-Message .botonMessage {
+    width: 90%;
+    border: 10px;
+    padding: 5px;
+    margin-left: 25px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border: 1px solid #2f7a42;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    font-size: 15px;
+}
+
+.tablaMessage {
+    width: 100%;
+    padding: 2px;
+}
+
+.form-Message .botonMessage2 {
+    width: 100%;
+    border: 5px;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1px solid #2f7a42;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    font-size: 15px;
+}
